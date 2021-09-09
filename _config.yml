@@ -1,16 +1,16 @@
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
+title:            0w0i0n0g0
+longtitle:        0w0i0n0g0
+author:           0w0i0n0g0
+email:            
 description: >
-  Build Jekyll site with the GitBook style.
+  0w0i0n0g0's Github page.
 
 version:          1.0
 gitbook_version:  3.2.3
 
 url:              'https://0w0i0n0g0.github.io'
-baseurl:          '/jekyll-gitbook'
+baseurl:          '/'
 rss:              RSS
 
 toc:
