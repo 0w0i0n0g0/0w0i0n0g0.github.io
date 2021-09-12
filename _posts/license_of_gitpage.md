@@ -1,0 +1,11 @@
+---
+title: License
+author: 0w0i0n0g0
+date: 2019-04-29
+category: Jekyll
+layout: post
+---
+
+이 깃허브 페이지는 아파치 라이센스 2.0 버전을 따르는 [gitbook](https://github.com/GitbookIO/gitbook)과 [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook)으로 제작되었습니다.
+
+다만 이 깃허브 페이지 내의 모든 저작물 (글, 사진, 코드 등)은 모두 [0w0i0n0g0](https://github.com/0w0i0n0g0)에게 있습니다.
