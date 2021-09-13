@@ -4,12 +4,21 @@
     </div> -->
     <nav role="navigation">
         <ul class="summary">
-            {% if page.url == "/index.html" or page.url == "/" %}
+            <!--{% if page.url == "/index.html" or page.url == "/" %}
             <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
             {% else %}
             <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
             {% endif %}
                 <a href="{{site.baseurl}}">
+                    {{ site.title | escape }}
+                </a>
+            </li>-->
+            {% if page.url == "/index.html" or page.url == "/" %}
+            <li class="chapter active" data-level="1.1" data-path="/">
+            {% else %}
+            <li class="chapter" data-level="1.1" data-path="/">
+            {% endif %}
+                <a href="/">
                     {{ site.title | escape }}
                 </a>
             </li>
