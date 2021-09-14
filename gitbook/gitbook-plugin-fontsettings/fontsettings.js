@@ -6,6 +6,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
 
     // Current fontsettings state
     var fontState;
+    fontState.size = 3;
 
     // Default themes
     var THEMES = [
