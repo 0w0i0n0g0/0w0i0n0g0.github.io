@@ -1,12 +1,11 @@
 require(['gitbook', 'jquery'], function(gitbook, $) {
     // Configuration
     var MAX_SIZE       = 4,
-        MIN_SIZE       = 0,
+        MIN_SIZE       = 3,
         BUTTON_ID;
 
     // Current fontsettings state
     var fontState;
-    fontState.size = 3;
 
     // Default themes
     var THEMES = [
