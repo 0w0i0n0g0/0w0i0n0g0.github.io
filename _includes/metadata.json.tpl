@@ -11,7 +11,7 @@
         "pluginsConfig": {
             "fontsettings": {
                 "family": "sans",
-                "size": 2,
+                "size": 3,
                 "theme": "white"
             },
             "highlight": {},
@@ -23,10 +23,10 @@
             "search": {},
             "sharing": {
                 "all": ["facebook", "google", "twitter", "weibo", "instapaper"],
-                "facebook": true,
+                "facebook": false,
                 "google": false,
                 "instapaper": false,
-                "twitter": true,
+                "twitter": false,
                 "vk": false,
                 "weibo": false
             },
@@ -43,7 +43,7 @@
             }
         },
         "theme": "default",
-        "author": "Tao He",
+        "author": "0w0i0n0g0",
         "pdf": {
             "pageNumbers": true,
             "fontSize": 12,
