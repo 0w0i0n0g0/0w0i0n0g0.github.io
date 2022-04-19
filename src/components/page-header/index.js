@@ -25,7 +25,7 @@ function PageHeader({ siteTitle }) {
         }
       `}
       render={(data) => (
-        <header className="page-header-wrapper">
+        <header className="page-header-wrapper" id = "back-to-top-anchor">
           <div className="page-header">
             <div className="front-section">
               <Link className="link" to="/">
@@ -34,10 +34,10 @@ function PageHeader({ siteTitle }) {
             </div>
             <div className="trailing-section">
               <Link className="link" to="/about">
-                about
+                소개
               </Link>
               <Link className="link" to="/posts">
-                posts
+                포스트
               </Link>
               <PostSearch
                 posts={data.allMarkdownRemark.edges.map(({ node }) => new Post(node, true))}
