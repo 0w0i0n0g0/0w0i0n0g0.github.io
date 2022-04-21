@@ -1,0 +1,56 @@
+@use '../../styles/_colors' as *;
+@use '../../styles/mixins' as *;
+
+.like-area {
+  width: 100% !important;
+  text-align: center !important;
+  padding: 15px 0 15px 0 !important;
+  margin-top: 45px !important;
+  margin-bottom: 90px !important;
+  font-size: larger !important;
+  color: var(--secondary-text-color) !important;
+  border-top: 1px solid var(--post-card-border-color) !important;
+  border-bottom: 1px solid var(--post-card-border-color) !important;
+  display: grid;
+
+  .like-button {
+    margin-top: 10px;
+  }
+
+  @include md {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 15px 0 15px 0 !important;
+    margin-top: 45px !important;
+    margin-bottom: 90px !important;
+    font-size: larger !important;
+    color: var(--secondary-text-color) !important;
+    border-top: 1px solid var(--post-card-border-color) !important;
+    border-bottom: 1px solid var(--post-card-border-color) !important;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .like-button {
+      margin-top: 0px;
+    }
+  }
+}
+
+.like-button {
+  color: var(--secondary-text-color) !important;
+  border: 1px solid var(--post-card-border-color) !important;
+}
+
+.like-button:hover {
+  color: var(--primary-text-color);
+}
+
+.liked {
+  color: dodgerblue !important;
+  border: none !important;
+}
+
+.liked:hover {
+  color: dodgerblue !important;
+}
