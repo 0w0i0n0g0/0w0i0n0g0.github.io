@@ -1,4 +1,4 @@
-@use '../../styles/mixins'as *;
+@use '../../styles/mixins' as *;
 
 @keyframes blinking-cursor {
   0% {
@@ -65,12 +65,9 @@
           }
         }
       }
-
-
     }
 
     &.english {
-      font-family: 'montserrat';
       font-size: 25px;
       line-height: 1.2;
 

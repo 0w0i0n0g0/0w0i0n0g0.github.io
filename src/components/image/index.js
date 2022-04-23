@@ -20,10 +20,10 @@ const Image = ({ src, ...rest }) => {
     }
   `);
 
-  const match = useMemo(() => data.images.edges.find(({ node }) => src === node.relativePath), [
-    data,
-    src,
-  ]);
+  const match = useMemo(
+    () => data.images.edges.find(({ node }) => src === node.relativePath),
+    [data, src],
+  );
 
   if (!match) return null;
 
