@@ -25,7 +25,7 @@ function PageHeader({ siteTitle }) {
         }
       `}
       render={(data) => (
-        <header className="page-header-wrapper" id = "back-to-top-anchor">
+        <header className="page-header-wrapper" id="back-to-top-anchor">
           <div className="page-header">
             <div className="front-section">
               <Link className="link" to="/">
