@@ -129,4 +129,5 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
   ],
+  assetPrefix: `https://cdn.jsdelivr.net/gh/0w0i0n0g0/0w0i0n0g0.github.io@gh-pages`,
 };
