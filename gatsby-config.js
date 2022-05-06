@@ -7,6 +7,9 @@ module.exports = {
 
   plugins: [
     {
+      resolve: 'gatsby-plugin-no-sourcemaps',
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
