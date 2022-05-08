@@ -197,7 +197,7 @@ reqlogin<span class="token punctuation">.</span><span class="token function-vari
 <p>단순히 한글을 URI 인코딩을 통해 정보를 보내면 될 것이라고 생각했지만 아무리 시도해보아도 로그인이 되지 않았다.</p>
 <p>자세히보니 encodeURIComponent 함수로 인코딩한 것과 실제 로그인할 때 보내지는 것이 달랐다.</p>
 <p>그렇게 몇시간을 구글에서 관련 자료를 검색하면서 원인을 알게 되었다.</p>
-<h3 id="진짜-문제-원인-" style="position:relative;"><a href="#%EC%A7%84%EC%A7%9C-%EB%AC%B8%EC%A0%9C-%EC%9B%90%EC%9D%B8-" aria-label="진짜 문제 원인  permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>진짜 문제 원인 🧨</h3>
+<h3 id="진짜-문제-원인" style="position:relative;"><a href="#%EC%A7%84%EC%A7%9C-%EB%AC%B8%EC%A0%9C-%EC%9B%90%EC%9D%B8" aria-label="진짜 문제 원인 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>진짜 문제 원인</h3>
 <p>진짜 문제는 “한글” 이름에 있다는 것을 알게 되었다.</p>
 <p>모든 인코딩 사이트에서 기본적으로 한글을 URI인코딩 하면, 한글이 UTF-8로 지정되고 인코딩되었다.</p>
 <p>그런데 로그인 페이지는 EUC-KR이라는 한글 인코딩을 사용하고 있었던 것이다. 😂</p>
@@ -365,7 +365,7 @@ Keychain<span class="token punctuation">.</span><span class="token function">set
 <p><a href="#-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%95%98%EA%B8%B0">📧 로그인 하기</a></p>
 <ul>
 <li><a href="#%ED%95%9C%EA%B8%80-%EC%9D%B8%EC%BD%94%EB%94%A9-%EB%AC%B8%EC%A0%9C%EC%97%90-%EB%B6%80%EB%94%AA%ED%9E%88%EB%8B%A4">한글 인코딩 문제에 부딪히다.</a></li>
-<li><a href="#%EC%A7%84%EC%A7%9C-%EB%AC%B8%EC%A0%9C-%EC%9B%90%EC%9D%B8-">진짜 문제 원인 🧨</a></li>
+<li><a href="#%EC%A7%84%EC%A7%9C-%EB%AC%B8%EC%A0%9C-%EC%9B%90%EC%9D%B8">진짜 문제 원인</a></li>
 <li><a href="#%EC%9E%84%EC%8B%9C-%EB%B0%A9%ED%8E%B8%EC%9C%BC%EB%A1%9C-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0">임시 방편으로 문제 해결…</a></li>
 <li><a href="#%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0-v2">문제 해결! (v.2)</a></li>
 </ul>
