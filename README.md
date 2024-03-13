@@ -37,15 +37,15 @@ This is my blog, hosted with Github pages, and Powered by Gatsby.
 
 ## Features
 
-- This blog is modified from [zoomkoding-gatsby-blog](https://github.com/zoomkoding/zoomkoding-gatsby-blog).
+- This blog is based on [zoomkoding-gatsby-blog](https://github.com/zoomkoding/zoomkoding-gatsby-blog).
 
 **Added Features**
 
-1. Back to top button.
+1. Scroll Back to Top button.
 
 2. Like button with confetti.
 
-3. Highlighted TOC according to where you're reading.
+3. Highlighted Table of Contents synced to the line where you're reading.
 
 4. Minor design changes.
 
@@ -61,6 +61,12 @@ This is my blog, hosted with Github pages, and Powered by Gatsby.
 
 ## License
 
+Feel free to use on your own blog theme!
+
 **The MIT License**
 
-You can clone it and use on your own blog theme if you want.
+Read full license [here](https://github.com/0w0i0n0g0/0w0i0n0g0.github.io/blob/main/LICENSE).
+
+Third Party Notices
+
+1. zoomkoding-gatsby-blog (https://github.com/zoomkoding/zoomkoding-gatsby-blog)
