@@ -1,8 +1,8 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import ReactCanvasConfetti from 'react-canvas-confetti';
 import Button from '@mui/material/Button';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import { useUpdateEffect, useEffectOnce } from 'usehooks-ts';
+import { useEffectOnce, useUpdateEffect} from 'usehooks-ts';
 import './style.scss';
 
 function PostFooter({ siteUrl, curPost }) {
@@ -75,18 +75,29 @@ function PostFooter({ siteUrl, curPost }) {
     const key = curPost.slug.replace(/\//g, '');
     //hit like count
     fetch(
-      `https://api.countapi.xyz/${
-        process.env.NODE_ENV === 'development' ? 'get' : 'hit'
-      }/${namespace}/${key}like`,
+      `https://api.counterapi.dev/v1/${namespace}/${key}-like/up`,
     ).then(async (result) => {
       const data = await result.json();
-      setLikeCount(data.value);
+      setLikeCount(data.count);
     });
     document.getElementsByClassName('like-button')[0].classList.add('liked');
     setLikeState('Liked');
     //set likebutton y and trigger likeButtonY useEffect
     setLikeButtonY(document.getElementsByClassName('like-button')[0].getBoundingClientRect().top);
   }, [siteUrl, curPost]);
+
+  useEffect(() => {
+    if (!siteUrl) return;
+    const namespace = siteUrl.replace(/(^\w+:|^)\/\//, '');
+    const key = curPost.slug.replace(/\//g, '');
+    //set like count
+    fetch(
+      `https://api.counterapi.dev/v1/${namespace}/${key}-like/`,
+    ).then(async (result) => {
+      const data = await result.json();
+      setLikeCount(data.count);
+    });
+  }, [likeState]);
 
   //set window y and trigger windownY useEffect
   useUpdateEffect(() => {
@@ -101,13 +112,7 @@ function PostFooter({ siteUrl, curPost }) {
   useEffectOnce(() => {
     if (ref.current) {
       ref.current.addEventListener('click', () => handleClick(), { once: true });
-    }
-    const namespace = siteUrl.replace(/(^\w+:|^)\/\//, '');
-    const key = curPost.slug.replace(/\//g, '');
-    fetch(`https://api.countapi.xyz/get/${namespace}/${key}like`).then(async (result) => {
-      const data = await result.json();
-      setLikeCount(data.value);
-    });
+    }  
   });
 
   return (

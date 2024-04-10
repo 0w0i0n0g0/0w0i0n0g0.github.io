@@ -25,12 +25,10 @@ function BlogTemplate({ data }) {
 
     //hit view count
     fetch(
-      `https://api.countapi.xyz/${
-        process.env.NODE_ENV === 'development' ? 'get' : 'hit'
-      }/${namespace}/${key}`,
+      `https://api.counterapi.dev/v1/${namespace}/${key}/up`,
     ).then(async (result) => {
       const data = await result.json();
-      setViewCount(data.value);
+      setViewCount(data.count);
     });
   }, [siteUrl, curPost.slug]);
 
