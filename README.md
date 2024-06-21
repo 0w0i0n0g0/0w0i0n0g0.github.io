@@ -3,23 +3,10 @@
 # [0w0i0n0g0.github.io](https://0w0i0n0g0.github.io/)
 
 <p align="center">
-  <img src="./assets/face.png" width="200"/>
+  <img src="./assets/face.png" width="300"/>
 </p>
 
 By_0w0i0n0g0
-
-<br>
-<br>
-
-## Table of Contents
-
-[Description](#description)
-
-[Features](#features)
-
-[Stack](#stack)
-
-[License](#license)
 
 </div>
 
