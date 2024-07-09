@@ -4,10 +4,10 @@ title: 스마텔 알뜰폰 사용량 위젯
 date: '2021-08-09 00:00:00'
 author: 0w0i0n0g0
 tags: mvno ios-widget scriptable scriptable-widgets
-categories: 기록
+categories: toy-project
 ---
 
-See this project on Github 👉 [Link](https://github.com/0w0i0n0g0/usage-widget-for-smartel)
+See this project on Github 👉 <a href="https://github.com/0w0i0n0g0/usage-widget-for-smartel" target="_blank" rel="noreferrer noopener">Link</a>
 
 ## 📚 개요
 
