@@ -4,10 +4,10 @@ title: CRVT archive
 date: '2020-12-10 00:00:00'
 author: 0w0i0n0g0
 tags: blogger html-css-javascript first-project k-pop
-categories: 기록
+categories: toy-project
 ---
 
-See this project on Github 👉 [Link](https://github.com/0w0i0n0g0/crvt-archive)
+See this project on Github 👉 <a href="https://github.com/0w0i0n0g0/crvt-archive" target="_blank" rel="noreferrer noopener">Link</a>
 
 ## 🎀 무엇을 만들까?
 
