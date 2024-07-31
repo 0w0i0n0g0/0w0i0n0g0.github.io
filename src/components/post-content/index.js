@@ -45,7 +45,7 @@ function PostContent({ html }) {
       let anchorsY = [];
       for (i = 0; i < anchors.length; i++) {
         let forEach = anchors[i];
-        let absoluteY = window.pageYOffset + forEach.getBoundingClientRect().top;
+        let absoluteY = window.scrollY + forEach.getBoundingClientRect().top - 60; // 헤더에 가려지는 부분 -60으로 제외.
         anchorsY[i] = absoluteY;
       }
       let activeIndex = nearestNumber(anchorsY, currentY);
@@ -54,6 +54,11 @@ function PostContent({ html }) {
         .getElementsByClassName('table-of-contents')
         .item(0)
         .querySelector("[href='" + activeHref + "']").className = 'active';
+
+      //toc auto scroll inside
+      let element = document.getElementsByClassName('table-of-contents').item(0).querySelector("[href='" + activeHref + "']");
+      element.scrollIntoView({ behavior: 'instant', block: 'center' }); // 보이도록 스크롤.
+
       return;
     }
 
