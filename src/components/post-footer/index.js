@@ -97,7 +97,7 @@ function PostFooter({ siteUrl, curPost }) {
       const data = await result.json();
       setLikeCount(data.count);
     });
-  }, [likeState]);
+  }, [likeState, curPost.slug, siteUrl]);
 
   //set window y and trigger windownY useEffect
   useUpdateEffect(() => {
