@@ -13,8 +13,6 @@ module.exports = {
   author: {
     name: `0w0i0n0g0`,
     bio: {
-      role: `개발자`,
-      description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
       thumbnail: 'face.png', // Path to the image in the 'asset' folder
     },
     social: {
@@ -42,11 +40,11 @@ module.exports = {
       },
       // ========================================================
       // ========================================================
-      {
-        date: '2022.05 ~',
-        activity: '카투사 복무',
-        links: {},
-      },
+      // {
+      //   date: '',
+      //   activity: '',
+      //   links: {},
+      // },
     ],
 
     projects: [
