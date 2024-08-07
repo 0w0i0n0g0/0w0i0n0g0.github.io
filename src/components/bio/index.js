@@ -13,7 +13,7 @@ function Bio({ author, language = 'ko' }) {
           <p className="title">
             안녕하세요,
             <br />
-              <span style={{ background : "linear-gradient(to right, #00ff7a, #0030ff)", backgroundClip : "text", WebkitTextFillColor : "transparent"}}><strong>{name}</strong></span> 입니다!
+              <span style={{ background : "linear-gradient(to right, #00ff7a, #0030ff)", backgroundClip : "text", WebkitTextFillColor : "transparent", display : "inline-block"}}><strong>{name}</strong></span> 입니다!
             <br />
           </p>
           <div className="social-links">
@@ -27,8 +27,8 @@ function Bio({ author, language = 'ko' }) {
             <br />
             my name is
             <br />
-            <span style={{ background : "linear-gradient(to right, #00ff7a, #0030ff)", backgroundClip : "text", WebkitTextFillColor : "transparent"}}><strong>{name}</strong></span>
-            .<br />
+              <span style={{ background : "linear-gradient(to right, #00ff7a, #0030ff)", backgroundClip : "text", WebkitTextFillColor : "transparent", display : "inline-block"}}><strong>{name}</strong></span>.
+            <br />
           </p>
           <div className="social-links">
             <IconButtonBar links={social} />
