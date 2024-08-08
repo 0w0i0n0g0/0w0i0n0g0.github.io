@@ -19,10 +19,12 @@ function PostHeader({ post, viewCount }) {
       <h1 className="title">{post.title}</h1>
       <div className="info">
         <div className="author">
-          posted by <strong>{post.author}</strong>,
-        </div>{' '}
+          posted by <strong>{post.author}</strong>
+        </div>
+        {" · "}
         {post.date}
-        {viewCount && ` · ${viewCount} views`}
+        {" · "}
+        {viewCount ? (viewCount === 1 ? '1 view' : `${viewCount} views`) : '- views'}
       </div>
     </header>
   );
