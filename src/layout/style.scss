@@ -39,6 +39,8 @@ a {
     @include content-horizontal-padding;
 
     .page-content {
+        margin-top: 60px;
+        margin-bottom: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
