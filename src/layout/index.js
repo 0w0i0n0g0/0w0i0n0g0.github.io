@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import PageHeader from '../components/page-header';
 import PageFooter from '../components/page-footer';
 import ThemeSwitch from '../components/theme-switch';
 import ScrollToTop from '../components/scroll-to-top';
+import { getValueFromLocalStorage } from '../utils/localStorage';
 import './style.scss';
 
 const Layout = ({ children }) => {
+  const [isDarkMode, setIsDarkMode] = useState(getValueFromLocalStorage('isDarkMode'));
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -32,8 +35,8 @@ const Layout = ({ children }) => {
         author={author.name || `Author`}
         githubUrl={author.social?.github || `https://www.github.com`}
       />
-      <ThemeSwitch />
-      <ScrollToTop />
+      <ThemeSwitch isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <ScrollToTop isDarkMode={isDarkMode} />
     </div>
   );
 };
