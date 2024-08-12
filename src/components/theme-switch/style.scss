@@ -13,11 +13,12 @@
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    background-color: #363f47 !important;
+    background-color: transparent !important;
     cursor: pointer;
-    box-shadow: 0px 5px 25px rgb(0 0 0 / 12%);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(5px);
     z-index: 3;
+    box-shadow: none !important;
+    outline: solid var(--post-card-border-color) 1px !important;
 }
 
 .dark-mode-icon {
