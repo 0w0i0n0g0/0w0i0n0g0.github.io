@@ -15,10 +15,12 @@
     max-width: 50px;
     max-height: 50px;
     border-radius: 50px;
-    background-color: #363f47 !important;
+    background-color: transparent !important;
     cursor: pointer;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(5px);
     z-index: 3;
+    box-shadow: none !important;
+    outline: solid var(--post-card-border-color) 1px !important;;
 }
 
 .scroll-to-top-icon {
