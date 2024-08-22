@@ -1,12 +1,14 @@
 <div align="center">
 
-# [0w0i0n0g0.github.io](https://0w0i0n0g0.github.io/)
+# [blog.wzero.dev](https://blog.wzero.dev)
+
+### [(0w0i0n0g0.github.io)](https://0w0i0n0g0.github.io)
 
 <p align="center">
-  <img src="./assets/face.png" width="300"/>
+  <img src="./assets/logo.png" width="300"/>
 </p>
 
-By_0w0i0n0g0
+by_0w0i0n0g0
 
 </div>
 
@@ -17,24 +19,28 @@ By_0w0i0n0g0
 
 Welcome! 👋
 
-This is my blog, hosted with Github pages, and Powered by Gatsby.
+This is my blog, hosted on Github Pages and built with Gatsby.
 
 <br>
 <br>
 
 ## Features
 
-- This blog is based on [zoomkoding-gatsby-blog](https://github.com/zoomkoding/zoomkoding-gatsby-blog).
+This blog is based on [zoomkoding-gatsby-blog](https://github.com/zoomkoding/zoomkoding-gatsby-blog).
 
-**Added Features**
+Major new features and minor design changes are applied to this blog theme.
 
-1. Scroll Back to Top button.
+### Main Features
 
-2. Like button with confetti.
+- Scroll Back to Top button.
 
-3. Highlighted Table of Contents synced to the line where you're reading.
+- Like button with confetti.
 
-4. Minor design changes.
+- View and Like count with counter api.
+
+- Highlighted Table of Contents synced to the line where you're reading with auto scrolling.
+
+- Minor design changes.
 
 <br>
 <br>
@@ -54,6 +60,6 @@ Feel free to use on your own blog theme!
 
 Read full license [here](https://github.com/0w0i0n0g0/0w0i0n0g0.github.io/blob/main/LICENSE).
 
-Third Party Notices
+**Third Party Notices**
 
-1. zoomkoding-gatsby-blog (https://github.com/zoomkoding/zoomkoding-gatsby-blog)
+- [zoomkoding-gatsby-blog](https://github.com/zoomkoding/zoomkoding-gatsby-blog)
