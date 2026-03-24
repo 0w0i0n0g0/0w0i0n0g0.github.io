@@ -365,6 +365,83 @@ displayFadeIn('main')
 }
 ```
 
+## 🔒 개인정보 암호화
+
+### 특정 경로로 들어올 때만 전체 정보 공개하기
+
+어느 누구나 접근 가능한 랜딩 페이지에 나의 실명이나 이력서(CV) 링크와 같은 민감한 개인정보가 그대로 노출되는 것은 부담스러울 수 있다.
+
+그래서 평소에는 닉네임과 깃허브, 블로그 링크 등 기본적인 정보만 보여주다가, 특정 URL 파라미터(예: `?ref=...`)가 포함된 경로로 접속한 사람에게만 숨겨진 실명과 CV 버튼을 보여주도록 구성했다.
+
+하지만 단순히 React 코드 안에서 하드코딩된 패스워드를 검사하거나 복호화 과정 없이 원본 데이터를 숨겨두면, 브라우저에서 소스 코드를 열었을 때 누구나 실제 데이터를 볼 수 있다는 문제가 있다.
+
+이를 방지하기 위해 브라우저에 내장된 **Web Crypto API**를 활용하여 강력한 암호화를 적용했다.
+
+#### 1. 데이터 암호화 및 저장
+
+개인정보(실명, CV 링크)는 사전에 AES-GCM 알고리즘으로 암호화했다. 그리고 암호문(Cipher Text), IV, Salt 값만 코드 내의 `ENC` 객체에 저장해둔다. 이 값들만으로는 원본 데이터를 절대 알 수 없다.
+
+```javascript
+// App.jsx
+const ENC = {
+  name: {
+    salt_b64: "...",
+    iv_b64: "...",
+    ct_b64: "..."
+  },
+  cv: { /* ... */ },
+  paramNames: ['ref']
+}
+```
+
+#### 2. 접속 파라미터를 이용한 키 파생 및 복호화
+
+사용자가 `?ref=비밀코드` 와 같이 특정 파라미터로 접속하면, `getReferralCode` 함수가 이 값을 읽어온다.
+그리고 이 '비밀코드'를 패스워드로 삼아 `PBKDF2` 알고리즘으로 복호화 키를 파생시킨 뒤, `crypto.subtle.decrypt`를 통해 복호화를 시도한다.
+
+```javascript
+// App.jsx
+async function deriveAesKeyFromCode(code, saltBytes) {
+  // 입력된 코드(비밀번호)와 Salt를 이용해 PBKDF2 알고리즘으로 AES-GCM 복호화 키 파생
+  const enc = new TextEncoder()
+  const baseKey = await crypto.subtle.importKey(...)
+  return crypto.subtle.deriveKey(...)
+}
+
+async function decryptText(ct_b64, iv_b64, salt_b64, code) {
+  try {
+    const key = await deriveAesKeyFromCode(code, salt) // 복호화 키 파생
+    const ptBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ct) // 복호화 시도
+    return new TextDecoder().decode(ptBuf)
+  } catch {
+    return null
+  }
+}
+```
+
+#### 3. 상태 업데이트 및 UI 반영
+
+만약 복호화에 성공했다면 올바른 암호 코드가 포함된 URL로 들어온 것이므로, React의 상태(`displayName`, `cvUrl`)를 업데이트하고 `canShowCvRef`를 `true`로 설정한다. 이후 애니메이션에 따라 CV 버튼이 화면에 나타나게 된다.
+
+```javascript
+// App.jsx
+useEffect(() => {
+  // ...
+  const decName = await decryptText(ENC.name.ct_b64, ENC.name.iv_b64, ENC.name.salt_b64, code)
+  const decCv = await decryptText(ENC.cv.ct_b64, ENC.cv.iv_b64, ENC.cv.salt_b64, code)
+  
+  // 복호화 성공 시 실명 및 CV 링크 렌더링 준비
+  if (decName) setDisplayName(decName)
+  if (decCv) {
+    setCvUrl(decCv)
+    canShowCvRef.current = true
+  }
+  // ...
+}, [])
+```
+
+결과적으로, 소스 코드가 노출되더라도 올바른 파라미터 값을 모른다면 누구도 내 실제 개인정보를 알아낼 수 없다. 특정 지인들이나 채용 담당자 등에게만 안전하게 실제 정보가 담긴 랜딩 페이지를 공유할 수 있도록 구성했다.
+
 ## 🚀 결과
 
 여기서 직접 확인해보세요! 👉 <a href="https://wzero.dev" target="_blank" rel="noreferrer noopener">Link</a>
