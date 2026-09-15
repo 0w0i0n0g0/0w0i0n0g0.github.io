@@ -15,7 +15,7 @@ See this project on Github 👉 <a href="https://github.com/0w0i0n0g0/0w0i0n0g0.
 
 - 1차 : 2022/4/19 ~ 2023/5/8
 
-- 2차 : 2022/7/2 ~ 2024/7/8
+- 2차 : 2024/7/2 ~ 2024/7/8
 
 ## 🏁 제작 동기
 
@@ -100,7 +100,21 @@ TOC는 자동으로 너무 예쁘게 생성되는데, TOC의 기본 기능인 �
 
 ### TOC 자동 스크롤 기능 추가
 
+TOC highlight 기능이 있어도 정작 글이 너무 길어지면 현재 읽고 있는 부분의 TOC 항목이 화면 밖으로 넘어가서 보이지 않는 문제가 있었다.
+
+이를 해결하기 위해 활성화된 TOC 항목을 추적하여 TOC 컨테이너 내에서 자동으로 스크롤해주는 기능을 추가했다.
+
+- 활성화된 TOC 엘리먼트를 찾은 뒤 `scrollIntoView` 메서드를 호출한다.
+- `block: 'center'` 옵션을 주어 활성화된 항목이 항상 TOC 영역의 중앙에 오도록 구현했다.
+- `behavior: 'instant'`를 사용하여 스크롤 시 딜레이 없이 즉각적으로 위치를 잡도록 설정했다.
+
 ### 커스텀 도메인 적용
+
+기존의 `0w0i0n0g0.github.io` 주소 대신 나만의 도메인을 사용하고 싶어서 `blog.wzero.dev` 도메인을 연결했다.
+
+- `static/CNAME` 파일을 생성하여 `blog.wzero.dev`를 입력했다. 가츠비(Gatsby) 빌드 시 이 파일이 `public` 폴더로 복사되어 GitHub Pages가 도메인을 인식하게 된다.
+- 도메인 관리 서비스(Cloudflare)에서 `blog` 서브도메인을 GitHub Pages 주소로 연결하는 CNAME 레코드를 등록했다.
+- GitHub 저장소 설정의 Pages 탭에서 도메인이 정상적으로 연결된 것을 확인하고, 보안을 위해 'Enforce HTTPS' 옵션을 활성화했다.
 
 ### 소소한 변경 사항
 
