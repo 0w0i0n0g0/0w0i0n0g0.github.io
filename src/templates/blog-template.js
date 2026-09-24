@@ -21,11 +21,11 @@ function BlogTemplate({ data }) {
   useEffect(() => {
     if (!siteUrl) return;
     const namespace = siteUrl.replace(/(^\w+:|^)\/\//, '');
-    const key = curPost.slug.replace(/\//g, '');
+    const key = curPost.slug.split('/').filter(Boolean).join('-');
 
     //hit view count
     fetch(
-      `https://api.counterapi.dev/v1/${namespace}/${key}/up`,
+      `https://pocketbase.wzero.dev/v1/${namespace}/${key}/up`,
     ).then(async (result) => {
       const data = await result.json();
       setViewCount(data.count);

@@ -72,10 +72,10 @@ function PostFooter({ siteUrl, curPost }) {
   const ref = useRef();
   const handleClick = useCallback(() => {
     const namespace = siteUrl.replace(/(^\w+:|^)\/\//, '');
-    const key = curPost.slug.replace(/\//g, '');
+    const key = curPost.slug.split('/').filter(Boolean).join('-');
     //hit like count
     fetch(
-      `https://api.counterapi.dev/v1/${namespace}/${key}-like/up`,
+      `https://pocketbase.wzero.dev/v1/${namespace}/${key}-like/up`,
     ).then(async (result) => {
       const data = await result.json();
       setLikeCount(data.count);
@@ -89,10 +89,10 @@ function PostFooter({ siteUrl, curPost }) {
   useEffect(() => {
     if (!siteUrl) return;
     const namespace = siteUrl.replace(/(^\w+:|^)\/\//, '');
-    const key = curPost.slug.replace(/\//g, '');
+    const key = curPost.slug.split('/').filter(Boolean).join('-');
     //set like count
     fetch(
-      `https://api.counterapi.dev/v1/${namespace}/${key}-like/`,
+      `https://pocketbase.wzero.dev/v1/${namespace}/${key}-like`,
     ).then(async (result) => {
       const data = await result.json();
       setLikeCount(data.count);
